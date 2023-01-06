@@ -1,0 +1,35 @@
+﻿@using fotogalerisiproje.Models;
+@model List<FotoOzellikleri>
+@{ 
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_GaleriLayout.cshtml";
+}
+
+<table class="table table-condensed">
+    <tr>
+        <th>ID</th>
+        <th>Fotoğrafın Adı</th>
+        <th>Fotoğrafın Renkleri</th>
+        <th>Fotoğrafın Sahibi</th>
+        <th>Konusu</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+<tr>
+    <td>@x.FOTOID</td>
+    <td>@x.FOTOAD</td>
+    <td>@x.FOTORENK</td>
+    <td>@x.FOTOSAHİBİ</td>
+    <td>@x.Kategori1.KATEGORIAD</td>
+    <td><a href="/Galeri/FotografSil/@x.FOTOID " class="btn btn-danger">Sil</a></td>
+    <td><a href="/Galeri/FotografGetir/@x.FOTOID " class="btn btn-warning">Güncelle</a></td>
+</tr>
+
+    }
+
+</table>
+
+<a href="/Galeri/FotografEkle" class="btn btn-primary">Yeni Fotoğraf</a>

@@ -1,0 +1,33 @@
+﻿@model fotogalerisiproje.Models.FotoOzellikleri
+@{
+    ViewBag.Title = "FotografGetir";
+    Layout = "~/Views/Shared/_GaleriLayout.cshtml";
+}
+
+@using (Html.BeginForm("FotografGuncelle", "Galeri", FormMethod.Post))
+{
+    <div style="margin-bottom:15px">
+        @Html.HiddenFor(y=>y.FOTOID)
+        @Html.LabelFor(x => x.FOTOAD)
+        @Html.TextBoxFor(x => x.FOTOAD, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px">
+
+        @Html.LabelFor(x => x.FOTORENK)
+        @Html.TextBoxFor(x => x.FOTORENK, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px">
+
+        @Html.LabelFor(x => x.FOTOSAHİBİ)
+        @Html.TextBoxFor(x => x.FOTOSAHİBİ, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-bottom:15px">
+
+        @Html.LabelFor(x => x.KATEGORI) 
+        @Html.TextBoxFor(x => x.KATEGORI, new { @class = "form-control" })
+    </div>
+    <button class="btn btn-success">Güncelle</button>
+
+
+}
